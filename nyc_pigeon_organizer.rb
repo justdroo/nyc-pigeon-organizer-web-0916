@@ -31,11 +31,17 @@ def nyc_pigeon_organizer(data)
 #finding unique names and creating first layer of new_hash
   name_final = name_array_all.flatten.uniq
   name_final.each do |name|
-    new_hash[name] = {color: [], gender: [], lives: []}
+    new_hash[name] = {color:[], gender: [], lives: []}
   end
 
-#adding colors to new_hash
-
+#adding seccond layer to new_hash
+data.each do |key, value|
+  value.each do |key2, value_arr|
+    value_arr.each do |name|
+      new_hash[name][key] << key2.to_s
+    end
+  end
+end
 
 #returns the whole hash
 new_hash

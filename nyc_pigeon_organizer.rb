@@ -46,5 +46,3 @@ end
 #returns the whole hash
 new_hash
 end
-
-puts nyc_pigeon_organizer(pigeon_data)
